@@ -1,4 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 50
-#include "cliente.h"
+
+void LerCliente(TCliente cliente){
+    printf("\nDigite o nome do cliente: ");
+    fflush(stdin);
+    fgets(cliente.nome,TAM,stdin);
+
+    printf("\ndigite o tipo de cliente: ");
+    fflush(stdin);
+    scanf("%d",&cliente.tipo);
+}
