@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "cliente.h"
-
-
-
-typedef struct data
-{
-    int dia;
-    int mes;
-    int ano;
-} TData;
+#include "produto.h"
 
 typedef struct vendas
 {

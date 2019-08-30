@@ -8,8 +8,14 @@ int main()
 {
 //declaracao de variaveis auxiliares
 TProduto produto1;
+LerProduto(produto1);
+
 TCliente cliente1;
+LerCliente (cliente1);
+
 TVenda venda1;
+LerVenda(venda1);
+
 
 //Modulos
 TModuloProduto modulo1;

@@ -21,5 +21,5 @@ typedef struct moduloProduto
     int indice;
 } TModuloProduto;
 
-void LerProduto(TProduto);
+void LerProduto(TProduto *produto);
 

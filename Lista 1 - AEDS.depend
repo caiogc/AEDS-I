@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1567217883 source:c:\users\09471171644\downloads\aeds-i-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567216582 c:\users\09471171644\downloads\aeds-i-master\cliente.h
+	<stdio.h>
+	<stdlib.h>
+

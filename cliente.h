@@ -24,18 +24,17 @@ typedef struct endereco
 
 typedef struct cliente
 {
-    char id[TAM];// CPF/CNPJ
+    char ID[TAM];// CPF/CNPJ
     int tipo; //0:física, 1:jurídica
     TEndereco enderecoCompleto;
     TData dataNascimento;
     char nome[TAM];
-
 } TCliente;
 
 typedef struct moduloCliente
 {
     TCliente vetor[TAM];
     int indice;
-} TModuloCliente
+} TModuloCliente;
 
-void LerCliente(TCliente);
+void LerCliente(TCliente *cliente);
