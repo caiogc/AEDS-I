@@ -58,8 +58,39 @@ void LerCliente(TCliente *cliente)
     printf("\nDigite o CEP: ");
     fflush(stdin);
     scanf("%d",&cliente->enderecoCompleto.cep);
+}
+
+void ImprimirCliente(TCliente cliente)
+{
+    printf("\nNome do cliente: ");
+    puts(cliente.nome);`
 
 
+    printf("\nTipo de cliente: ");
+    if (cliente.tipo == 0)
+    {
+        printf("\nPessoa fisica\nCPF: ");
+        puts(cliente.ID);
+    }
+    else
+    {
+        printf("\nPessoa juridica\nCNPJ: ");
+        puts(cliente.ID);
+    }
+    printf("\nData de nascimento: %d/%d/%d",cliente.dataNascimento.dia,cliente.dataNascimento.mes,cliente.dataNascimento.ano);
 
+    printf("\nRua: ");
+    puts(cliente.enderecoCompleto.rua);
 
+    printf("\nNumero: %d ",cliente.enderecoCompleto.numero);
+
+    printf("\nComplemento: %d",cliente.enderecoCompleto.complemento);
+
+    printf("\nBairro: ");
+    puts(cliente.enderecoCompleto.bairro);
+
+    printf("\nCidade: ");
+    puts(cliente.enderecoCompleto.cidade);
+
+    printf("\nCEP: %d",cliente.enderecoCompleto.cep);
 }

@@ -18,4 +18,4 @@ typedef struct moduloVendas
     int indice;
 } TModuloVendas;
 
-void LerVenda(TVenda);
+void LerVenda(TVenda *vendas);

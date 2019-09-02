@@ -38,3 +38,5 @@ typedef struct moduloCliente
 } TModuloCliente;
 
 void LerCliente(TCliente *cliente);
+
+void ImprimirCliente(TCliente cliente);

@@ -8,3 +8,32 @@
 	<stdio.h>
 	<stdlib.h>
 
+1567207639 source:c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567207639 c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\cliente.h
+	<stdio.h>
+	<stdlib.h>
+
+1567207639 source:c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\produto.c
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1567357194 c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\produto.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567357194 source:c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\vendas.c
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+
+1567357194 c:\users\seucl\onedrive\햞ea de trabalho\aeds-i-master\vendas.h
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
