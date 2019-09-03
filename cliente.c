@@ -62,35 +62,35 @@ void LerCliente(TCliente *cliente)
 
 void ImprimirCliente(TCliente cliente)
 {
-    printf("\nNome do cliente: ");
-    puts(cliente.nome);`
+    printf("\nNome do cliente: %s",cliente.nome);
+    //puts(cliente.nome);`
 
 
     printf("\nTipo de cliente: ");
     if (cliente.tipo == 0)
     {
-        printf("\nPessoa fisica\nCPF: ");
-        puts(cliente.ID);
+        printf("\nPessoa fisica\nCPF: %s",cliente.ID);
+        //puts(cliente.ID);
     }
     else
     {
-        printf("\nPessoa juridica\nCNPJ: ");
-        puts(cliente.ID);
+        printf("\nPessoa juridica\nCNPJ: %s",cliente.ID);
+        //puts(cliente.ID);
     }
     printf("\nData de nascimento: %d/%d/%d",cliente.dataNascimento.dia,cliente.dataNascimento.mes,cliente.dataNascimento.ano);
 
-    printf("\nRua: ");
-    puts(cliente.enderecoCompleto.rua);
+    printf("\nRua: %s",cliente.enderecoCompleto);
+    //puts(cliente.enderecoCompleto.rua);
 
     printf("\nNumero: %d ",cliente.enderecoCompleto.numero);
 
     printf("\nComplemento: %d",cliente.enderecoCompleto.complemento);
 
-    printf("\nBairro: ");
-    puts(cliente.enderecoCompleto.bairro);
+    printf("\nBairro: %s",cliente.enderecoCompleto.bairro);
+    //puts(cliente.enderecoCompleto.bairro);
 
-    printf("\nCidade: ");
-    puts(cliente.enderecoCompleto.cidade);
+    printf("\nCidade: %s",cliente.enderecoCompleto.cidade);
+    //puts(cliente.enderecoCompleto.cidade);
 
     printf("\nCEP: %d",cliente.enderecoCompleto.cep);
 }

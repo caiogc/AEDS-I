@@ -37,3 +37,32 @@
 	<stdlib.h>
 	"produto.h"
 
+1567550388 source:c:\users\caio guilherme\desktop\aeds-i-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567437762 c:\users\caio guilherme\desktop\aeds-i-master\cliente.h
+	<stdio.h>
+	<stdlib.h>
+
+1567437762 source:c:\users\caio guilherme\desktop\aeds-i-master\produto.c
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1567437762 c:\users\caio guilherme\desktop\aeds-i-master\produto.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567437762 source:c:\users\caio guilherme\desktop\aeds-i-master\vendas.c
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+
+1567437762 c:\users\caio guilherme\desktop\aeds-i-master\vendas.h
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+

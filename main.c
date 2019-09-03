@@ -21,7 +21,6 @@ TModuloProduto modulo1;
 TModuloCliente modulo2;
 TModuloVendas modulo3;
 
-printf("\nProduto\n")
 
 return 0;
 }
