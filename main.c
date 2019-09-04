@@ -7,6 +7,7 @@ int main()
 //declaracao de variaveis auxiliares
 TProduto produto1;
 LerProduto(&produto1);
+ImprimirProduto(produto1);
 
 TCliente cliente1;
 LerCliente (&cliente1);

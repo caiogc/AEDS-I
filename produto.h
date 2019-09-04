@@ -22,4 +22,8 @@ typedef struct moduloProduto
 } TModuloProduto;
 
 void LerProduto(TProduto *produto);
+void ImprimirProduto (TProduto produto);
+void IniciarModuloProduto(TModuloProduto *modulo);
+void InserirProduto(TModuloProduto *modulo, TProduto produto);
+int PesquisarProduto(TModuloProduto modulo, TProduto produto);
 
