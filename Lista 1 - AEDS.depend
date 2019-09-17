@@ -66,3 +66,37 @@
 	<stdlib.h>
 	"produto.h"
 
+1567705704 source:c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1568681382 c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\cliente.h
+	<stdio.h>
+	<stdlib.h>
+
+1568161672 source:c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\produto.c
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1568157635 c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\produto.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1567790131 source:c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\vendas.c
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+
+1567789886 c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\vendas.h
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1568680152 source:c:\users\caio guilherme\desktop\facul\3º periodo\aeds i\roteiro tad\aeds-i-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+

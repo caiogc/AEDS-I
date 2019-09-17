@@ -62,35 +62,81 @@ void LerCliente(TCliente *cliente)
 
 void ImprimirCliente(TCliente cliente)
 {
+    printf("\n>>>>>>>>>Imprimindo Cliente<<<<<<<<<<<\n");
     printf("\nNome do cliente: %s",cliente.nome);
-    //puts(cliente.nome);`
-
 
     printf("\nTipo de cliente: ");
     if (cliente.tipo == 0)
     {
-        printf("\nPessoa fisica\nCPF: %s",cliente.ID);
-        //puts(cliente.ID);
+        printf("Pessoa fisica\nCPF: %s",cliente.ID);
     }
     else
     {
-        printf("\nPessoa juridica\nCNPJ: %s",cliente.ID);
-        //puts(cliente.ID);
+        printf("Pessoa juridica\nCNPJ: %s",cliente.ID);
     }
     printf("\nData de nascimento: %d/%d/%d",cliente.dataNascimento.dia,cliente.dataNascimento.mes,cliente.dataNascimento.ano);
 
-    printf("\nRua: %s",cliente.enderecoCompleto);
-    //puts(cliente.enderecoCompleto.rua);
+    printf("\nrua %s, %d, complemento %d, bairro %s - %s - CEP - %d",cliente.enderecoCompleto.rua,cliente.enderecoCompleto.numero,cliente.enderecoCompleto.complemento,cliente.enderecoCompleto.bairro,cliente.enderecoCompleto.cidade,cliente.enderecoCompleto.cep);
+}
 
-    printf("\nNumero: %d ",cliente.enderecoCompleto.numero);
+void IniciarModuloCliente(TModuloCliente *modulo)
+{
+    modulo->indice=0;
+}
+void InserirCliente(TModuloCliente *modulo, TCliente cliente)
+{
+    if(modulo->indice<TAM)
+    {
+        modulo->vetor[modulo->indice]=cliente;
+        modulo->indice++;
+        printf("\nCliente cadastrado com sucesso!");
+    }
+    else
+    {
+        printf("\nNAO E POSSIVEL CADASTRAR!!\N");
+    }
+}
+int PesquisarCliente(TModuloCliente modulo, TCliente cliente)
+{
+    int i;
+    for(i=0; i<modulo.indice; i++)
+    {
+        if(modulo.vetor[i].ID == cliente.ID)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+void ImprimirTodosClientes(TModuloCliente modulo)
+{
+    printf("\n>>>>>Lista de Clientes<<<<<<");
+    int i;
+    for(i=0; i<modulo.indice; i++)
+    {
+        ImprimirCliente(modulo.vetor[i]);
+    }
+}
+void AlterarCliente(TModuloCliente *modulo, TCliente cliente)
+{
+    int i = PesquisarCliente(*modulo, cliente);
+    if(i != -1)
+    {
+        LerCliente(&modulo->vetor[i]);
+        printf("Cliente alterado com sucesso!");
+    }
+    else
+    {
+        printf("\nCLIENTE NAO ENCONTRADO!");
+    }
+}
+void ExcluirCliente (TModuloCliente *modulo, TCliente cliente)
+{
+    int i = PesquisarCliente(*modulo, cliente);
 
-    printf("\nComplemento: %d",cliente.enderecoCompleto.complemento);
-
-    printf("\nBairro: %s",cliente.enderecoCompleto.bairro);
-    //puts(cliente.enderecoCompleto.bairro);
-
-    printf("\nCidade: %s",cliente.enderecoCompleto.cidade);
-    //puts(cliente.enderecoCompleto.cidade);
-
-    printf("\nCEP: %d",cliente.enderecoCompleto.cep);
+    for( i ; i < modulo->indice; i++)
+    {
+        modulo->vetor[i]=modulo->vetor[i+1];
+    }
+    modulo->indice--;
 }

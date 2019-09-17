@@ -19,3 +19,10 @@ typedef struct moduloVendas
 } TModuloVendas;
 
 void LerVenda(TVenda *vendas);
+void ImprimirVenda(TVenda vendas);
+void IniciarModuloVenda(TModuloVendas *modulo);
+void InserirVenda(TModuloVendas *modulo, TVenda vendas);
+int PesquisarVenda(TModuloVendas modulo, TVenda vendas);
+void ImprimirTodasVendas(TModuloVendas modulo);
+void AlterarVenda(TModuloVendas *modulo, TVenda vendas);
+void ExcluirVenda (TModuloVendas *modulo, TVenda vendas);

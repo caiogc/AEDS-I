@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "produto.h"
 
-void LerProduto(TProduto *produto){
+void LerProduto(TProduto *produto)
+{
     printf("\nDigite o codigo do produto: ");
     fflush(stdin);
     scanf("%d",&produto->codigo);
@@ -23,7 +24,7 @@ void LerProduto(TProduto *produto){
     fflush(stdin);
     scanf("%d",&produto->dataFabricacao.mes);
 
-    printf("Digite o mes: ");
+    printf("Digite o ano: ");
     fflush(stdin);
     scanf("%d",&produto->dataFabricacao.ano);
 
@@ -37,45 +38,89 @@ void LerProduto(TProduto *produto){
 
     printf("Digite o preco: ");
     fflush(stdin);
-    scanf("%.2f",&produto->preco);
+    scanf("%f",&produto->preco);
 
-void ImprimirProduto (TProduto produto){
+}
+
+void ImprimirProduto (TProduto produto)
+{
 
     printf("\n--PRODUTO--\nCodigo: %d",produto.codigo);
 
-    printf("Nome: %s",produto.nome);
+    printf("\nNome: %s",produto.nome);
 
-    printf("Descricao: %s",produto.descricao);
+    printf("\nDescricao: %s",produto.descricao);
 
-    printf("Data de fabricacao: %d/%d/%d",produto.dataFabricacao.dia,produto.dataFabricacao.mes,produto.dataFabricacao.ano);
+    printf("\nData de fabricacao: %d/%d/%d",produto.dataFabricacao.dia,produto.dataFabricacao.mes,produto.dataFabricacao.ano);
 
-    printf("Lote: %d",produto.lote);
+    printf("\nLote: %d",produto.lote);
 
-    printf("Quantidade em estoque: %d",produto.quantidade);
+    printf("\nQuantidade em estoque: %d",produto.quantidade);
 
-    printf("Preco: %.2f",produto.preco);
+    printf("\nPreco: %.2f",produto.preco);
 }
-void IniciarModuloProduto(TModuloProduto *modulo){
+void IniciarModuloProduto(TModuloProduto *modulo)
+{
     modulo->indice=0;
 }
-void InserirProduto(TModuloProduto *modulo, TProduto produto){
-    if(modulo->indice<TAM){
-
+void InserirProduto(TModuloProduto *modulo, TProduto produto)
+{
+    if(modulo->indice<TAM)
+    {
+        modulo->vetor[modulo->indice]=produto;
+        modulo->indice++;
+        printf("\nProduto cadastrado com sucesso!");
+    }
+    else
+    {
+        printf("\nNAO E POSSIVEL CADASTRAR!!\N");
     }
 }
-int PesquisarProduto(TModuloProduto modulo, TProduto produto){
+int PesquisarProduto(TModuloProduto modulo, TProduto produto)
+{
     int i;
-    for(i=0; i<modulo.indice;i++){
-        if(modulo.vetor[i].codigo == produto.codigo){
-
+    for(i=0; i<modulo.indice; i++)
+    {
+        if(modulo.vetor[i].codigo == produto.codigo)
+        {
+            return i;
         }
     }
+    return -1;
+}
+
+void ImprimirTodosProdutos(TModuloProduto modulo)
+{
+    printf("\n>>>>>Lista de Produtos<<<<<<");
+    int i;
+    for(i=0; i<modulo.indice; i++)
+    {
+        ImprimirProduto(modulo.vetor[i]);
+    }
+}
+void AlterarPoduto(TModuloProduto *modulo, TProduto produto)
+{
+    int i = PesquisarProduto(*modulo, produto);
+    if(i != -1)
+    {
+        LerProduto(&modulo->vetor[i]);
+        printf("Produto alterado com sucesso!");
+    }
+    else
+    {
+        printf("\nPRODUTO NAO ENCONTRADO!");
+    }
+}
+void ExcluirProduto (TModuloProduto *modulo, TProduto produto)
+{
+    int i = PesquisarProduto(*modulo, produto);
+
+    for( i ; i < modulo->indice; i++)
+    {
+        modulo->vetor[i]=modulo->vetor[i+1];
+    }
+    modulo->indice--;
 }
 
 
-
-
-
-
-}
 

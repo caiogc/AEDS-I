@@ -38,5 +38,10 @@ typedef struct moduloCliente
 } TModuloCliente;
 
 void LerCliente(TCliente *cliente);
-
 void ImprimirCliente(TCliente cliente);
+void IniciarModuloCliente(TModuloCliente *modulo);
+void InserirCliente(TModuloCliente *modulo, TCliente cliente);
+int PesquisarCliente(TModuloCliente modulo, TCliente cliente);
+void ImprimirTodosClientes(TModuloCliente modulo);
+void AlterarCliente(TModuloCliente *modulo, TCliente cliente);
+void ExcluirCliente (TModuloCliente *modulo, TCliente cliente);

@@ -16,7 +16,6 @@ typedef struct produto
 
 typedef struct moduloProduto
 {
-
     TProduto vetor[TAM];
     int indice;
 } TModuloProduto;
@@ -26,4 +25,6 @@ void ImprimirProduto (TProduto produto);
 void IniciarModuloProduto(TModuloProduto *modulo);
 void InserirProduto(TModuloProduto *modulo, TProduto produto);
 int PesquisarProduto(TModuloProduto modulo, TProduto produto);
-
+void ImprimirTodosProdutos(TModuloProduto modulo);
+void AlterarPoduto(TModuloProduto *modulo, TProduto produto);
+void ExcluirProduto (TModuloProduto *modulo, TProduto produto);
