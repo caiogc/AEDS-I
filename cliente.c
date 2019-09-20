@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "cliente.h"
 
+
 void LerCliente(TCliente *cliente)
 {
     printf("\nDigite o nome do cliente: ");
@@ -62,7 +63,7 @@ void LerCliente(TCliente *cliente)
 
 void ImprimirCliente(TCliente cliente)
 {
-    printf("\n>>>>>>>>>Imprimindo Cliente<<<<<<<<<<<\n");
+    printf("\n\n---CLIENTE---");
     printf("\nNome do cliente: %s",cliente.nome);
 
     printf("\nTipo de cliente: ");
@@ -93,7 +94,7 @@ void InserirCliente(TModuloCliente *modulo, TCliente cliente)
     }
     else
     {
-        printf("\nNAO E POSSIVEL CADASTRAR!!\N");
+        printf("\nNAO E POSSIVEL CADASTRAR!!\n");
     }
 }
 int PesquisarCliente(TModuloCliente modulo, TCliente cliente)
@@ -101,7 +102,7 @@ int PesquisarCliente(TModuloCliente modulo, TCliente cliente)
     int i;
     for(i=0; i<modulo.indice; i++)
     {
-        if(modulo.vetor[i].ID == cliente.ID)
+        if(strcmp(modulo.vetor[i].ID, cliente.ID) == 0)
         {
             return i;
         }
@@ -110,7 +111,7 @@ int PesquisarCliente(TModuloCliente modulo, TCliente cliente)
 }
 void ImprimirTodosClientes(TModuloCliente modulo)
 {
-    printf("\n>>>>>Lista de Clientes<<<<<<");
+    printf("\n>>>>>>>>>LISTA DE CLIENTES<<<<<<<<<<");
     int i;
     for(i=0; i<modulo.indice; i++)
     {
@@ -133,10 +134,21 @@ void AlterarCliente(TModuloCliente *modulo, TCliente cliente)
 void ExcluirCliente (TModuloCliente *modulo, TCliente cliente)
 {
     int i = PesquisarCliente(*modulo, cliente);
-
-    for( i ; i < modulo->indice; i++)
+    int j;
+    if(i != -1)
     {
-        modulo->vetor[i]=modulo->vetor[i+1];
+        ImprimirCliente(modulo->vetor[i]);
+        for( j=i ; j < modulo->indice; j++)
+        {
+            modulo->vetor[j]=modulo->vetor[j+1];
+        }
+        modulo->indice--;
+        printf("\nCLIENTE EXCLUIDO COM SUCESSO!!");
+
     }
-    modulo->indice--;
+    else
+    {
+        printf("Nao encontrado");
+    }
+
 }

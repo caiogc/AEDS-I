@@ -66,7 +66,7 @@
 	<stdlib.h>
 	"produto.h"
 
-1567705704 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\cliente.c
+1568681878 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
@@ -75,7 +75,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1568161672 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\produto.c
+1568681878 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\produto.c
 	<stdio.h>
 	<stdlib.h>
 	"produto.h"
@@ -85,18 +85,73 @@
 	<stdlib.h>
 	"cliente.h"
 
-1567790131 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\vendas.c
+1568738317 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\vendas.c
 	<stdio.h>
 	<stdlib.h>
 	"vendas.h"
 
-1567789886 c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\vendas.h
+1568685107 c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\vendas.h
 	<stdio.h>
 	<stdlib.h>
 	"produto.h"
 
-1568680152 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\main.c
+1568741205 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1568737975 c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\menu.h
 	<stdio.h>
 	<stdlib.h>
 	"vendas.h"
+
+1568741055 source:c:\users\caio guilherme\desktop\facul\3บ periodo\aeds i\roteiro tad\aeds-i-master\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1569008935 source:c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1568936050 c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1568949244 source:c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1568949185 c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\menu.h
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+
+1568999802 c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\vendas.h
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1568760909 c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\produto.h
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1569008725 source:c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\produto.c
+	<stdio.h>
+	<stdlib.h>
+	"produto.h"
+
+1569009130 source:c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\vendas.c
+	<stdio.h>
+	<stdlib.h>
+	"vendas.h"
+
+1569007899 source:c:\users\caio guilherme\desktop\facul\3ยบ periodo\aeds i\roteiro tad\aeds-i-master\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
 

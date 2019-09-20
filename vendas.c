@@ -2,16 +2,25 @@
 #include <stdlib.h>
 #include "vendas.h"
 
+//declaracao de variaveis auxiliares
+
+
+
 void LerVenda(TVenda *vendas)
 {
+    printf("\n>>>>>VENDA<<<<<<");
 
-    printf("\nDigite ID da venda: ");
+    printf("\nDigite ID do cliente: ");
     fflush(stdin);
     fgets(vendas->ID,TAM,stdin);
 
-    printf("\nDigite o codigo da venda: ");
+    printf("\nDigite o codigo do produto: ");
     fflush(stdin);
     scanf("%d",&vendas->codigo);
+
+    printf("\nQuantas unidades deseja adquirir?");
+    fflush(stdin);
+    scanf("%d",&vendas->quantidade);
 
     printf("\nData da venda\nDia: ");
     fflush(stdin);
@@ -29,72 +38,92 @@ void LerVenda(TVenda *vendas)
     fflush(stdin);
     scanf("%d",&vendas->tipo);
 
-    if(&vendas->tipo == 1){
-        printf("\nData do pagamento\nDia: ");
-    fflush(stdin);
-    scanf("%d",&vendas->dataPagamento.dia);
-
-    printf("\nMes: ");
-    fflush(stdin);
-    scanf("%d",&vendas->dataPagamento.mes);
-
-    printf("\nAno: ");
-    fflush(stdin);
-    scanf("%d",&vendas->dataPagamento.ano);
-    }
-
-
-
-}
-
-void ImprimirVenda(TVenda vendas){
-    printf("\n>>>>>>>>VENDAS<<<<<<<<<<<\n");
-
-    printf("\nID da venda: %s",vendas.ID);
-    printf("\nCodigo da venda: %d",vendas.codigo);
-    printf("\nData da Venda: %d/%d/%d",vendas.dataVenda.dia,vendas.dataVenda.mes,vendas.dataVenda.ano);
-    if(vendas.tipo == 0){
-        printf("\nPagamento a vista em: %d/%d/%d",vendas.dataVenda.dia,vendas.dataVenda.mes,vendas.dataVenda.ano);
-    }
-    else{
-        printf("\nData do pagamento: %d/%d/%d",vendas.dataPagamento.dia,vendas.dataPagamento.mes,vendas.dataPagamento.ano);
-    }
-}
-void IniciarModuloVenda(TModuloVendas *modulo){
-    modulo->indice=0;
-}
-void InserirVenda(TModuloVendas *modulo, TVenda vendas){
-    if(modulo->indice<TAM)
+    if(vendas->tipo == 1)
     {
-        modulo->vetor[modulo->indice]=cliente;
-        modulo->indice++;
-        printf("\nVenda cadastrada com sucesso!");
+        printf("\nData do pagamento\nDia: ");
+        fflush(stdin);
+        scanf("%d",&vendas->dataPagamento.dia);
+
+        printf("\nMes: ");
+        fflush(stdin);
+        scanf("%d",&vendas->dataPagamento.mes);
+
+        printf("\nAno: ");
+        fflush(stdin);
+        scanf("%d",&vendas->dataPagamento.ano);
+    }
+}
+
+void ImprimirVenda(TVenda vendas)
+{
+    printf("\n\n---VENDA---");
+
+    printf("\nID do produto: %s",vendas.ID);
+    printf("\nCodigo do produto: %d",vendas.codigo);
+    printf("\nData da Venda: %d/%d/%d",vendas.dataVenda.dia,vendas.dataVenda.mes,vendas.dataVenda.ano);
+    printf("\nQuantidade vendida: %d",vendas.quantidade);
+    if(vendas.tipo == 0)
+    {
+        printf("\nPagamento a vista em: %d/%d/%d",vendas.dataVenda.dia,vendas.dataVenda.mes,vendas.dataVenda.ano);
     }
     else
     {
-        printf("\nNAO E POSSIVEL CADASTRAR!!\N");
+        printf("\nData do pagamento: %d/%d/%d",vendas.dataPagamento.dia,vendas.dataPagamento.mes,vendas.dataPagamento.ano);
     }
 }
-int PesquisarVenda(TModuloVendas modulo, TVenda vendas){
+void IniciarModuloVenda(TModuloVendas *modulo)
+{
+    modulo->indice=0;
+}
+void InserirVenda(TModuloVendas *modulo3, TVenda vendas, TModuloProduto *modulo1, TModuloCliente modulo2)
+{
+    int i, j;
+    TProduto produto;
+    produto.codigo = vendas.codigo;
+    i=PesquisarProduto(*modulo1,produto);
+
+    TCliente cliente;
+    strcpy(cliente.ID, vendas.ID);
+    j=PesquisarCliente(modulo2,cliente);
+
+    if(i != -1 && j == 0 && modulo3->indice<TAM && modulo1->vetor[i].quantidade >= vendas.quantidade)
+    {
+        modulo1->vetor[i].quantidade -= vendas.quantidade;
+        modulo3->vetor[modulo3->indice]=vendas;
+        modulo3->indice++;
+        printf("\nVenda cadastrada com sucesso!");
+
+    }
+    else
+    {
+        printf("\nNAO E POSSIVEL CADASTRAR!!\n");
+    }
+
+}
+
+int PesquisarVenda(TModuloVendas modulo, TVenda vendas)
+{
     int i;
     for(i=0; i<modulo.indice; i++)
     {
-        if(modulo.vetor[i].ID == vendas.ID)
+        if(modulo.vetor[i].codigo == vendas.codigo && strcmp(modulo.vetor[i].ID, vendas.ID) == 0)
         {
             return i;
         }
     }
     return -1;
 }
-void ImprimirTodasVendas(TModuloVendas modulo){
-    printf("\n>>>>>Lista de Vendas<<<<<<");
+void ImprimirTodasVendas(TModuloVendas modulo)
+{
+    printf("\n>>>>>>>>>>LISTA DE VENDAS<<<<<<<<<<<<");
     int i;
     for(i=0; i<modulo.indice; i++)
     {
         ImprimirVenda(modulo.vetor[i]);
     }
 }
-void AlterarVenda(TModuloVendas *modulo, TVenda vendas){
+void AlterarVenda(TModuloVendas *modulo, TVenda vendas)
+{
     int i = PesquisarVenda(*modulo, vendas);
     if(i != -1)
     {
@@ -106,12 +135,22 @@ void AlterarVenda(TModuloVendas *modulo, TVenda vendas){
         printf("\nVENDA NAO ENCONTRADA!");
     }
 }
-void ExcluirVenda (TModuloVendas *modulo, TVenda vendas){
+void ExcluirVenda (TModuloVendas *modulo, TVenda vendas)
+{
     int i = PesquisarVenda(*modulo, vendas);
 
-    for( i ; i < modulo->indice; i++)
+    if(i != -1)
     {
-        modulo->vetor[i]=modulo->vetor[i+1];
+        ImprimirVenda(modulo->vetor[i]);
+        for(  ; i < modulo->indice; i++)
+        {
+            modulo->vetor[i]=modulo->vetor[i+1];
+        }
+        modulo->indice--;
+        printf("\nVenda excluida com sucesso!");
     }
-    modulo->indice--;
+    else
+    {
+        printf("\nVENDA NAO ENCONTRADA!!!");
+    }
 }

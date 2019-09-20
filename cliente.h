@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define TAM 50
+
 
 typedef struct data
 {
@@ -44,4 +46,4 @@ void InserirCliente(TModuloCliente *modulo, TCliente cliente);
 int PesquisarCliente(TModuloCliente modulo, TCliente cliente);
 void ImprimirTodosClientes(TModuloCliente modulo);
 void AlterarCliente(TModuloCliente *modulo, TCliente cliente);
-void ExcluirCliente (TModuloCliente *modulo, TCliente cliente);
+void ExcluirCliente(TModuloCliente *modulo, TCliente cliente);

@@ -9,6 +9,8 @@ typedef struct vendas
     TData dataVenda;
     int tipo; //0: à vista, 1: à prazo
     TData dataPagamento;
+    int quantidade;
+    float total;
 
 } TVenda;
 
@@ -21,7 +23,7 @@ typedef struct moduloVendas
 void LerVenda(TVenda *vendas);
 void ImprimirVenda(TVenda vendas);
 void IniciarModuloVenda(TModuloVendas *modulo);
-void InserirVenda(TModuloVendas *modulo, TVenda vendas);
+void InserirVenda(TModuloVendas *modulo3, TVenda vendas, TModuloProduto *modulo1, TModuloCliente modulo2);
 int PesquisarVenda(TModuloVendas modulo, TVenda vendas);
 void ImprimirTodasVendas(TModuloVendas modulo);
 void AlterarVenda(TModuloVendas *modulo, TVenda vendas);

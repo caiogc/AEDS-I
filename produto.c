@@ -45,7 +45,7 @@ void LerProduto(TProduto *produto)
 void ImprimirProduto (TProduto produto)
 {
 
-    printf("\n--PRODUTO--\nCodigo: %d",produto.codigo);
+    printf("\n\n--PRODUTO--\nCodigo: %d",produto.codigo);
 
     printf("\nNome: %s",produto.nome);
 
@@ -73,7 +73,7 @@ void InserirProduto(TModuloProduto *modulo, TProduto produto)
     }
     else
     {
-        printf("\nNAO E POSSIVEL CADASTRAR!!\N");
+        printf("\nNAO E POSSIVEL CADASTRAR!!\n");
     }
 }
 int PesquisarProduto(TModuloProduto modulo, TProduto produto)
@@ -91,12 +91,13 @@ int PesquisarProduto(TModuloProduto modulo, TProduto produto)
 
 void ImprimirTodosProdutos(TModuloProduto modulo)
 {
-    printf("\n>>>>>Lista de Produtos<<<<<<");
+    printf("\n>>>>>>LISTA DE PRODUTOS<<<<<<");
     int i;
     for(i=0; i<modulo.indice; i++)
     {
         ImprimirProduto(modulo.vetor[i]);
     }
+    system("pause");
 }
 void AlterarPoduto(TModuloProduto *modulo, TProduto produto)
 {
@@ -115,11 +116,22 @@ void ExcluirProduto (TModuloProduto *modulo, TProduto produto)
 {
     int i = PesquisarProduto(*modulo, produto);
 
-    for( i ; i < modulo->indice; i++)
+    if(i != -1)
     {
-        modulo->vetor[i]=modulo->vetor[i+1];
+        ImprimirProduto(modulo->vetor[i]);
+        for(    ; i < modulo->indice; i++)
+        {
+            modulo->vetor[i]=modulo->vetor[i+1];
+        }
+        modulo->indice--;
+        printf("\nProduto excluido com sucesso!!");
     }
-    modulo->indice--;
+    else
+    {
+        printf("\nPRODUTO NAO ENCONTRADO!!");
+    }
+
+
 }
 
 
